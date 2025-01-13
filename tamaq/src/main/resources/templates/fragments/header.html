@@ -1,0 +1,149 @@
+<style>
+    /* Общие стили для body */
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+    }
+/* Стили для шапки (header) */
+        .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Выравниваем элементы по вертикали */
+        background-color: #ffffff;
+        padding: 20px 100px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Логотип и название сайта */
+    .Logo {
+        display: flex;
+        align-items: center; /* Убедитесь, что иконка и текст выровнены по центру */
+    }
+
+    .tagam {
+        font-family: "18VAG Rounded M", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #46a54b;
+        margin-left: 10px; /* Изменено на margin-left для более аккуратного вида */
+    }
+            .Logo i {
+        font-size: 36px; /* Увеличенный размер иконки */
+        color: #46a54b; /* Зеленый цвет */
+    }
+
+    .Logo a {
+text-decoration: none; /* Убираем подчеркивание для ссылки */
+color: inherit; /* Наследуем цвет от родительского элемента */
+}
+
+    .group {
+        width: 50px;
+        height: 50px;
+        color: #46a54b;
+        font-size: 30px;
+    }
+
+    /* Стили для навигации (ссылки) */
+    .HeaderText {
+        display: flex;
+        gap: 30px;
+    }
+
+    .HeaderText a {
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+
+    .HeaderText a:hover {
+        color: #46a54b;
+    }
+
+     .Cart {
+        display: flex;
+        align-items: center;
+        background-color: #53c959;
+        padding: 10px 20px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    .Cart:hover {
+        background-color: #46a54b;
+    }
+
+    .cart-icon {
+        margin-right: 10px;
+        font-size: 20px;
+        color: white;
+    }
+
+    .Cart a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .text-wrapper,
+    .cart-summary {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        line-height: 1;
+    }
+
+    .cart-summary {
+        margin-left: 10px;
+    }
+</style>
+
+<div class="header" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="Logo">
+        <a th:href="@{/home}" style="display: flex; align-items: center;">
+            <i class="fas fa-seedling"></i>
+            <div class="tagam">Tagam</div>
+        </a>
+    </div>
+    <div class="HeaderText">
+        <a th:href="@{/home}" class="text-wrapper-2">Главная</a>
+        <a th:href="@{/categories/{id}(id=9)}" class="text-wrapper-2">Категории</a>
+        <a th:href="@{/profile}" class="text-wrapper-2">Профиль</a>
+    </div>
+    <div class="Cart">
+        <a th:href="@{/cart}" style="display: flex; align-items: center;">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+        </a>
+        <div class="cart-summary">
+            <span id="cart-quantity">0</span> | <span id="cart-total">0 ₸</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateCartSummary() {
+        fetch('/cart/summary', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Обновляем количество товаров и общую сумму
+            document.getElementById('cart-quantity').textContent = data.totalQuantity;
+            document.getElementById('cart-total').textContent = data.totalSum + ' ₸';
+        })
+        .catch(error => console.error('Ошибка при обновлении корзины:', error));
+    }
+
+    // Обновляем данные корзины при загрузке страницы
+    document.addEventListener('DOMContentLoaded', updateCartSummary);
+
+    // При необходимости можно обновлять данные корзины каждые 1 секунд
+    setInterval(updateCartSummary, 1000); // Каждые 1 секунд
+</script>

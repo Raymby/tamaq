@@ -1,0 +1,401 @@
+2024-12-28 22:09:53 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:09:53 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 2504 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:09:53 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:09:56 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:09:56 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 202 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:09:58 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:09:58 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5041 ms
+2024-12-28 22:09:59 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:09:59 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:09:59 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:10:00 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:10:03 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:10:04 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:10:05 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:10:08 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:10:10 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:10:10 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 18.275 seconds (process running for 28.416)
+2024-12-28 22:10:18 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:10:18 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 22:10:18 [http-nio-8080-exec-1] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:10:19 [http-nio-8080-exec-5] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:12:09 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:12:18 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:12:19 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 3432 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:12:19 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:12:21 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:12:21 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 265 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:12:23 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:12:23 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4267 ms
+2024-12-28 22:12:24 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:12:24 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:12:24 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:12:25 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:12:28 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:12:29 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:12:30 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:12:33 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:12:34 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:12:34 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 16.997 seconds (process running for 21.066)
+2024-12-28 22:12:36 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:12:36 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 22:12:37 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:14:10 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:14:18 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:14:18 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 11468 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:14:18 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:14:20 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:14:20 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 178 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:14:21 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:14:22 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3592 ms
+2024-12-28 22:14:22 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:14:22 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:14:22 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:14:23 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:14:26 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:14:27 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:14:28 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:14:30 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:14:32 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:14:32 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 15.052 seconds (process running for 17.875)
+2024-12-28 22:14:47 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:14:47 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 22:14:47 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:19:40 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:19:46 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:19:47 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 4648 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:19:47 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:19:48 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:19:49 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 169 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:19:50 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:19:50 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3449 ms
+2024-12-28 22:19:51 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:19:51 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:19:51 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:19:52 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:19:55 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:19:55 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:19:56 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:19:59 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:20:00 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:20:00 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 14.312 seconds (process running for 17.035)
+2024-12-28 22:20:22 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:20:22 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 22:20:23 [http-nio-8080-exec-3] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:20:23 [http-nio-8080-exec-5] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:22:55 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:23:01 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:23:01 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 2812 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:23:01 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:23:03 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:23:03 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 192 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:23:05 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:23:05 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3654 ms
+2024-12-28 22:23:05 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:23:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:23:06 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:23:06 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:23:10 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:23:10 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:23:11 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:23:13 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:23:15 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:23:15 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 14.439 seconds (process running for 17.142)
+2024-12-28 22:23:20 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:23:20 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2024-12-28 22:23:20 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:29:58 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:30:05 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:30:05 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 10648 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:30:05 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:30:07 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:30:07 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 236 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:30:09 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:30:09 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3879 ms
+2024-12-28 22:30:10 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:30:10 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:30:10 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:30:11 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:30:14 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:30:15 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:30:16 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:30:19 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:30:20 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:30:20 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 16.414 seconds (process running for 19.466)
+2024-12-28 22:30:41 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:30:41 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 22:30:41 [http-nio-8080-exec-3] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:32:52 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:33:00 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:33:00 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 8380 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:33:00 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:33:02 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:33:02 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 165 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:33:03 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:33:03 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3501 ms
+2024-12-28 22:33:04 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:33:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:33:04 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:33:05 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:33:09 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:33:09 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:33:10 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:33:13 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:33:14 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:33:14 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 15.612 seconds (process running for 18.597)
+2024-12-28 22:33:17 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:33:17 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 22:33:17 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:35:33 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:35:40 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:35:40 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 1464 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:35:40 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:35:42 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:35:42 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 176 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:35:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:35:44 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3611 ms
+2024-12-28 22:35:44 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:35:44 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:35:45 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:35:45 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:35:49 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:35:49 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:35:50 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:35:54 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:35:55 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:35:55 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 15.936 seconds (process running for 18.877)
+2024-12-28 22:51:12 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:51:12 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 22:51:12 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:56:45 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:56:53 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:56:53 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 7748 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:56:53 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:56:55 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:56:56 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 201 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:56:57 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:56:57 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3999 ms
+2024-12-28 22:56:58 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:56:58 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:56:58 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:56:59 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:57:03 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:57:03 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:57:04 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:57:08 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:57:09 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:57:09 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 17.197 seconds (process running for 20.477)
+2024-12-28 22:57:10 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:57:10 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-28 22:57:11 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 22:58:48 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:58:56 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 22:58:56 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 13932 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 22:58:56 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 22:58:58 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 22:58:58 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 163 ms. Found 6 JPA repository interfaces.
+2024-12-28 22:59:00 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 22:59:00 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3703 ms
+2024-12-28 22:59:00 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 22:59:01 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 22:59:01 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 22:59:01 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 22:59:05 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 22:59:05 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 22:59:06 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 22:59:08 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 22:59:09 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 22:59:09 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 15.184 seconds (process running for 18.315)
+2024-12-28 22:59:10 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 22:59:10 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-28 22:59:10 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:00:55 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:01:01 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:01:01 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 8040 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:01:01 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:01:02 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:01:02 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 140 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:01:04 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:01:04 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2917 ms
+2024-12-28 23:01:04 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:01:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:01:05 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:01:05 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:01:08 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:01:08 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:01:09 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:01:11 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:01:13 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:01:13 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 13.267 seconds (process running for 15.665)
+2024-12-28 23:01:29 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:01:29 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 23:01:29 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:04:22 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:04:28 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:04:28 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 12800 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:04:28 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:04:30 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:04:30 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 168 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:04:31 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:04:31 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3250 ms
+2024-12-28 23:04:32 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:04:32 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:04:32 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:04:33 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:04:36 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:04:36 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:04:37 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:04:39 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:04:40 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:04:40 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 12.98 seconds (process running for 15.473)
+2024-12-28 23:04:41 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:04:41 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 23:04:41 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:05:29 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:05:35 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:05:35 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 5800 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:05:35 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:05:37 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:05:37 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 154 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:05:38 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:05:38 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3128 ms
+2024-12-28 23:05:39 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:05:39 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:05:39 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:05:40 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:05:43 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:05:43 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:05:44 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:05:46 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:05:47 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:05:47 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 13.42 seconds (process running for 16.105)
+2024-12-28 23:06:10 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:06:10 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-28 23:06:10 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:13:28 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:13:33 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:13:33 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 2796 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:13:33 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:13:35 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:13:35 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:13:36 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:13:36 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2921 ms
+2024-12-28 23:13:37 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:13:37 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:13:37 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:13:38 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:13:40 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:13:40 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:13:41 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:13:43 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:13:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:13:44 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 11.718 seconds (process running for 14.007)
+2024-12-28 23:16:32 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:16:32 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 23:16:33 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:17:34 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:17:40 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:17:40 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 13136 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:17:40 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:17:42 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:17:42 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 189 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:17:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:17:44 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3528 ms
+2024-12-28 23:17:44 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:17:44 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:17:45 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:17:45 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:17:48 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:17:49 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:17:49 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:17:52 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:17:53 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:17:53 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 13.541 seconds (process running for 16.182)
+2024-12-28 23:18:02 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:18:02 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 23:18:02 [http-nio-8080-exec-1] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:18:36 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:18:47 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:18:47 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 8568 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:18:47 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:18:49 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:18:49 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 152 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:18:50 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:18:50 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3069 ms
+2024-12-28 23:18:51 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:18:51 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:18:51 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:18:51 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:18:54 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:18:54 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:18:55 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:18:57 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:18:58 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:18:58 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 11.748 seconds (process running for 17.997)
+2024-12-28 23:19:00 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:19:00 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2024-12-28 23:19:00 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:20:43 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:20:49 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:20:49 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 9816 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:20:49 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:20:50 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:20:50 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 146 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:20:52 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:20:52 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2895 ms
+2024-12-28 23:20:52 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:20:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:20:52 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:20:53 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:20:55 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:20:56 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:20:56 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:20:59 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:21:00 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:21:00 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 11.733 seconds (process running for 13.993)
+2024-12-28 23:21:02 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:21:02 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-28 23:21:02 [http-nio-8080-exec-2] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:28:08 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:28:16 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:28:16 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 9024 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:28:16 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:28:18 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:28:18 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 221 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:28:20 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:28:20 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3896 ms
+2024-12-28 23:28:21 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:28:21 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:28:21 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:28:22 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:28:25 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:28:26 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:28:27 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:28:31 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:28:32 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:28:32 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 17.236 seconds (process running for 20.087)
+2024-12-28 23:28:49 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:28:49 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-28 23:28:49 [http-nio-8080-exec-1] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:32:42 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:32:49 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-28 23:32:49 [main] INFO  com.example.tamaq.TamaqApplication - Starting TamaqApplication using Java 23 with PID 9616 (C:\Users\raymbek\Desktop\tamaq\tamaq\target\classes started by raymbek in C:\Users\raymbek\Desktop\tamaq\tamaq)
+2024-12-28 23:32:49 [main] INFO  com.example.tamaq.TamaqApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28 23:32:51 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-28 23:32:51 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 175 ms. Found 6 JPA repository interfaces.
+2024-12-28 23:32:53 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-28 23:32:53 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3592 ms
+2024-12-28 23:32:53 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-28 23:32:54 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-28 23:32:54 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-28 23:32:55 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-28 23:32:58 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-28 23:32:58 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-28 23:32:59 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-28 23:33:01 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-28 23:33:03 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-12-28 23:33:03 [main] INFO  com.example.tamaq.TamaqApplication - Started TamaqApplication in 14.775 seconds (process running for 17.572)
+2024-12-28 23:33:05 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-28 23:33:05 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2024-12-28 23:33:05 [http-nio-8080-exec-4] INFO  com.example.tamaq.Controllers.HomeController - Rendering login page
+2024-12-28 23:34:03 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

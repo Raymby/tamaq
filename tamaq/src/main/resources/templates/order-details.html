@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Детали заказа</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding-bottom: 20px;
+        }
+
+        .TextHeader {
+            background-color: #46a54b;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .details {
+            padding: 20px;
+        }
+
+        .details h2 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .details p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .details p span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 5px; /* Добавлен верхний отступ */
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #46a54b;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3b9443;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/header"></div>
+
+<div class="container">
+    <div class="TextHeader">
+        Детали заказа
+    </div>
+    <div class="details">
+        <h2>Информация о заказе</h2>
+        <p>ID заказа: <span th:text="${order.id}"></span></p>
+        <p>Статус: <span th:text="${order.status}"></span></p>
+        <p>Сумма: <span th:text="${order.totalAmount} + ' USD'"></span></p>
+        <p>Дата доставки: <span th:text="${order.deliveryDate}"></span></p>
+        <p>Время доставки: <span th:text="${order.deliveryTime}"></span></p>
+        <p>Адрес: <span th:text="${order.address}"></span></p>
+        <p>Телефон: <span th:text="${order.phone}"></span></p>
+        <p>Комментарий: <span th:text="${order.comments}"></span></p>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/profile}" class="btn">Вернуться в профиль</a>
+    </div>
+</div>
+
+<div th:replace="fragments/footer"></div>
+
+</body>
+</html>

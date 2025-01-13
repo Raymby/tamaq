@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+</head>
+</html>
+
+<style>
+    /* Общие стили для price-container */
+   .price-container {
+       position: relative;
+       width: 160px;
+       height: 50px;
+       border-radius: 12px;
+       background: rgb(245, 245, 245);
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 0 10px;
+       transition: background-color 0.3s ease;
+   }
+
+   .price-container.active {
+       background: rgb(83, 201, 90);
+       color: white;
+   }
+
+   /* Стили для price-content */
+   .price-content {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       width: 100%;
+   }
+
+   .price-content.hidden {
+       display: none;
+   }
+
+   .price-text {
+       display: flex;
+       align-items: baseline;
+       gap: 5px;
+   }
+
+   .price-amount {
+       font-size: 18px;
+       font-weight: bold;
+       color: rgb(79, 79, 79);
+   }
+
+   .price-container.active .price-amount {
+       color: white;
+   }
+
+   .price-currency {
+       font-size: 14px;
+       font-weight: bold;
+       color: rgb(79, 79, 79);
+   }
+
+   .price-container.active .price-currency {
+       color: white;
+   }
+
+   /* Зеленый + без обводки */
+   .add-btn {
+       background: none;
+       border: none;
+       color: rgb(83, 201, 90); /* Зеленый цвет */
+       font-size: 20px;
+       font-weight: bold;
+       width: 30px;
+       height: 30px;
+       border-radius: 50%;
+       cursor: pointer;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       transition: color 0.3s ease;
+       margin-bottom: 20px; ; /* Убираем лишние отступы */
+
+   }
+
+   .price-container.active .add-btn {
+       color: white; /* Белый цвет при активном состоянии */
+   }
+
+   /* Стили для quantity-selector */
+   .quantity-selector {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       width: 100%;
+       padding: 0 10px;
+       gap: 5px;
+   }
+
+   .quantity-selector.hidden {
+       display: none;
+   }
+   .hidden {
+    display: none;
+}
+
+
+   /* - и + без обводки */
+   .decrement-btn,
+   .increment-btn {
+       background: none;
+       border: none;
+       font-size: 18px;
+       font-weight: bold;
+       color: white;
+       cursor: pointer;
+       width: 30px;
+       height: 30px;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       transition: color 0.3s ease;
+       margin-bottom: 20px;
+   }
+
+   .quantity-value {
+       font-size: 16px;
+       font-weight: bold;
+       color: white; /* Белый текст при активном состоянии */
+   }
+
+   .quantity-unit {
+       font-size: 14px;
+       font-weight: bold;
+       color: white;
+   }
+
+</style>
+
+
+<div class="price-container"  th:attr="data-product-id=${product.id}, data-cart-item-id=${cartItem?.id}"  xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="price-content">
+        <div class="price-text">
+            <span class="price-amount" th:text="${product.price}">0</span>
+            <span class="price-currency">₸</span>
+        </div>
+        <button class="add-btn" onclick="toggleQuantitySelector(this)">+</button>
+    </div>
+    <div class="quantity-selector hidden">
+        <button class="decrement-btn" onclick="decrementQuantity(this)">-</button>
+        <span class="quantity-value">1</span>
+        <span class="quantity-unit">шт</span>
+        <button class="increment-btn" onclick="incrementQuantity(this)">+</button>
+    </div>
+</div>
+
+
+<script>
+    function toggleQuantitySelector(button) {
+    const container = button.closest('.price-container');
+    const priceContent = container.querySelector('.price-content');
+    const quantitySelector = container.querySelector('.quantity-selector');
+    const productId = container.getAttribute('data-product-id');
+
+    console.log('Container:', container);
+    console.log('PriceContent:', priceContent);
+    console.log('QuantitySelector:', quantitySelector);
+
+    // Убедимся, что все необходимые элементы существуют
+    if (!priceContent || !quantitySelector) {
+        console.error('Не удалось найти блоки для переключения.');
+        return;
+    }
+
+    // Отправляем запрос для добавления продукта в корзину
+    fetch('/cart/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            productId: productId,
+            quantity: 1,
+        }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                console.log('Добавлено в корзину, ID:', data.cartItemId);
+                priceContent.classList.add('hidden');
+                quantitySelector.classList.remove('hidden');
+                container.classList.add('active');
+                container.setAttribute('data-cart-item-id', data.cartItemId);
+            } else {
+                console.error('Ошибка при добавлении товара в корзину:', data.message);
+            }
+        })
+        .catch((error) => {
+            console.error('Ошибка:', error);
+        });
+}
+
+
+  function incrementQuantity(button) {
+      const container = button.closest('.price-container');
+      const quantityValue = container.querySelector('.quantity-value');
+      const cartItemId = container.getAttribute('data-cart-item-id'); // Используем ID элемента корзины
+      const currentQuantity = parseInt(quantityValue.textContent);
+
+      // Отправляем запрос для увеличения количества
+      fetch('/cart/update-quantity', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({
+              id: cartItemId,
+              increase: true, // Указываем, что увеличиваем количество
+          }),
+      })
+          .then((response) => response.json())
+          .then((data) => {
+              if (data.success) {
+                  quantityValue.textContent = currentQuantity + 1;
+              } else {
+                  console.error('Ошибка:', data.message);
+              }
+          })
+          .catch((error) => {
+              console.error('Ошибка:', error);
+          });
+  }
+
+  function decrementQuantity(button) {
+    const container = button.closest('.price-container');
+    const priceContent = container.querySelector('.price-content');
+    const quantitySelector = container.querySelector('.quantity-selector');
+    const quantityValue = container.querySelector('.quantity-value');
+    const cartItemId = container.getAttribute('data-cart-item-id'); // Используем ID элемента корзины
+    const currentQuantity = parseInt(quantityValue.textContent);
+
+    if (currentQuantity > 1) {
+        // Отправляем запрос для уменьшения количества
+        fetch('/cart/update-quantity', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                id: cartItemId,
+                increase: false, // Указываем, что уменьшаем количество
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    quantityValue.textContent = currentQuantity - 1;
+                } else {
+                    console.error('Ошибка:', data.message);
+                }
+            })
+            .catch((error) => {
+                console.error('Ошибка:', error);
+            });
+    } else {
+        // Отправляем запрос для удаления продукта из корзины
+        fetch('/cart/api/remove', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+        id: cartItemId,
+    }),
+})
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.success) {
+            // Возврат к price-content
+            priceContent.classList.remove('hidden');
+            quantitySelector.classList.add('hidden');
+            container.classList.remove('active'); // Возвращаем фон и цвет
+        } else {
+            console.error('Ошибка при удалении товара из корзины:', data.message);
+        }
+    })
+    .catch((error) => {
+        console.error('Ошибка:', error);
+    });
+
+    }
+}
+
+
+</script>

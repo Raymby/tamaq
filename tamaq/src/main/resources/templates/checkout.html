@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукты в подкатегории</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    /* Общие стили для body */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.checkout-form {
+    width: 60%; /* уменьшенная ширина формы */
+    margin-left: 80px; /* отступ слева для блока формы */
+
+}
+
+.checkout-form {
+    background-color: #ffffff; /* Белый фон */
+    border: 1px solid #e0e0e0; /* Серые границы */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 20px; /* Внутренний отступ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
+}
+
+
+.checkout-form label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+
+
+.checkout-form input,
+.checkout-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.phone-input-wrapper {
+    position: relative; /* Позволяет использовать абсолютное позиционирование внутри */
+    display: flex;
+    align-items: stretch; /* Заставляет элементы занимать полную высоту родителя */
+}
+
+.phone-prefix {
+    position: absolute; /* Позволяет перекрывать input */
+    top: 0; /* Убедитесь, что префикс находится на верхнем крае */
+    left: 0; /* Левое значение по умолчанию */
+    background-color: rgb(235, 235, 235);
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 15px 0 0 15px; /* Скругление для префикса */
+    padding: 10px 15px;
+    color: rgb(107, 107, 107);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    z-index: 1; /* Убедитесь, что префикс находится над input */
+}
+
+.phone-input {
+    width: 120px;
+    height: 37px; /* Убедитесь, что высота совпадает с высотой префикса */
+    border-radius: 0 15px 15px 0; /* Скругление для input */
+    font-size: 18px;
+    color: #333;
+    border: 1px solid #ddd; /* Установите стандартный цвет рамки */
+    outline: none; /* Убираем стандартный outline */
+    box-sizing: border-box;
+    margin-left: 49px; /* Чтобы учитывать padding и border в ширине */
+}
+
+.phone-input:focus {
+    border: 2px solid green; /* Зеленая рамка при фокусе */
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Опционально: легкое свечение для улучшения эффекта */
+}
+
+
+.checkout-form textarea#comments {
+    height: 40px; /* увеличенная высота для комментариев */
+    width: 800px;
+    border-radius: 8px; /* округлённые углы */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.order-summary {
+    height: 200px;
+    width: 30%; /* длина блока с итоговой суммой */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: left;
+    margin-right: 50px; /* отступ справа для блока с итоговой суммой */
+}
+
+.order-summary h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.summary-total {
+    font-weight: bold;
+    color: #5cb85c;
+    font-size: 22px;
+}
+
+.order-summary button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.order-summary button:hover {
+    background-color: #4cae4c;
+}
+
+    #delivery-date-container {
+        display: flex;
+        gap: 10px;
+        position: relative;
+    }
+
+    .date-block {
+        width: 132px;
+        height: 34px;
+        border-radius: 10px;
+        background: #EBEBEB; /* Серый фон для не выбранных дат */
+        color: #6B6B6B; /* Тёмно-серый цвет текста для не выбранных дат */
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 34px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .date-block.selected {
+        background: rgb(83, 201, 89); /* Зелёный фон для выбранной даты */
+        color: rgb(255, 255, 255); /* Белый цвет текста для выбранной даты */
+    }
+
+#delivery-time-container {
+    display: flex;
+    gap: 15px;
+    width: 100%; /* Задайте ширину в 100% */
+    width: 800px; /* Максимальная ширина для ограничения */
+
+}
+
+.time-block {
+    width: 220px; /* Ширина блока */
+    height: 80px; /* Высота блока */
+    border: 1px solid rgb(107, 107, 107);
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; /* Выровнять элементы по левому краю */
+    cursor: pointer;
+    padding: 15px; /* Внутренний отступ */
+    position: relative;
+}
+
+
+
+.time-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time-icon {
+    width: 14px; /* Небольшое увеличение иконки */
+    height: 14px;
+    color: rgb(140, 140, 140);
+}
+
+.duration {
+    color: rgb(140, 140, 140);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+}
+
+.time-range {
+    color: rgb(77, 77, 77);
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+    margin-top: 8px; /* Добавлен отступ сверху для более удобного расположения */
+}
+
+.price {
+    align-self: flex-start;
+    color: rgb(115, 115, 115);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    margin-top: 10px; /* Добавлен отступ сверху для более удобного расположения */
+}
+
+ .time-block.selected {
+    background: #ECF9EC; /* Цвет фона при выборе */
+    border: 1px solid #53C959; /* Цвет обводки при выборе */
+}
+
+.time-icon.selected {
+    color: #53C959; /* Цвет иконки при выборе */
+}
+
+.time-range.selected {
+    font-weight: bold; /* Жирный текст при выборе */
+    color: #4D4D4D; /* Цвет текста при выборе */
+}
+
+.price.selected {
+    color: #4D4D4D; /* Цвет цены при выборе */
+}
+
+/* Восстановите обычное состояние для невыбранных элементов */
+.time-range {
+    color: #4D4D4D; /* Цвет текста по умолчанию */
+    font-weight: normal; /* Нормальное начертание шрифта */
+}
+
+    #address {
+    border-radius: 10px; /* Округление границ */
+    border: 1px solid #ddd; /* Обводка */
+    padding: 10px; /* Внутренний отступ для лучшего отображения текста */
+    width: 160px;; /* Занимает всю ширину родительского элемента */
+    box-sizing: border-box; /* Учитывать отступы и границы в ширине */
+}
+.time-container-wrapper {
+    margin-top: 20px; /* Отступ сверху */
+}
+
+
+
+
+</style>
+<body>
+
+<div th:replace="fragments/header"></div>
+
+
+<div class="checkout-container">
+    <!-- Форма оформления заказа -->
+    <div class="checkout-form">
+        <form th:action="@{/checkout}" method="post" onsubmit="return validateForm()">
+            <!-- Номер телефона -->
+            <div>
+                <label for="phone">Номер телефона</label>
+                <div class="phone-input-wrapper">
+                    <span class="phone-prefix">+7</span>
+                    <input type="text" id="phone" name="phone" required class="phone-input" placeholder="XXX-XXX-XX-XX">
+                </div>
+            </div>
+
+            <!-- Адрес доставки -->
+            <div>
+                <label for="address">Адрес доставки</label>
+                <input type="text" id="address" name="address" required placeholder="Введите адрес">
+            </div>
+
+            <!-- Комментарии -->
+            <div>
+                <label for="comments">Комментарий к адресу</label>
+                <textarea id="comments" name="comments" placeholder="Уточните детали доставки"></textarea>
+            </div>
+
+            <!-- Дата доставки -->
+            <div>
+                <label for="delivery-date-container">Дата</label>
+                <div id="delivery-date-container">
+                    <div class="date-block" onclick="selectDate(0)">
+                        Сегодня, <span id="date0"></span>
+                    </div>
+                    <div class="date-block" onclick="selectDate(1)">
+                        Завтра, <span id="date1"></span>
+                    </div>
+                    <div class="date-block" onclick="selectDate(2)">
+                        <span id="date2"></span>
+                    </div>
+                    <div class="date-block" onclick="selectDate(3)">
+                        <span id="date3"></span>
+                    </div>
+                    <input type="hidden" id="deliveryDate" name="deliveryDate" required>
+                </div>
+            </div>
+
+            <!-- Время доставки -->
+            <div class="time-container-wrapper">
+                <label for="delivery-time-container">Время</label>
+                <div id="delivery-time-container">
+                    <div class="time-block" onclick="selectTime('16:00 - 18:00')">
+                        <div class="time-info">
+                            <i class="fas fa-clock time-icon"></i>
+                            <span class="duration">2 ч</span>
+                        </div>
+                        <span class="time-range">16:00 - 18:00</span>
+                        <span class="price">700 ₸</span>
+                    </div>
+                    <div class="time-block" onclick="selectTime('17:00 - 19:00')">
+                        <div class="time-info">
+                            <i class="fas fa-clock time-icon"></i>
+                            <span class="duration">2 ч</span>
+                        </div>
+                        <span class="time-range">17:00 - 19:00</span>
+                        <span class="price">700 ₸</span>
+                    </div>
+                    <div class="time-block" onclick="selectTime('18:00 - 20:00')">
+                        <div class="time-info">
+                            <i class="fas fa-clock time-icon"></i>
+                            <span class="duration">2 ч</span>
+                        </div>
+                        <span class="time-range">18:00 - 20:00</span>
+                        <span class="price">700 ₸</span>
+                    </div>
+                    <div class="time-block" onclick="selectTime('19:00 - 21:00')">
+                        <div class="time-info">
+                            <i class="fas fa-clock time-icon"></i>
+                            <span class="duration">2 ч</span>
+                        </div>
+                        <span class="time-range">19:00 - 21:00</span>
+                        <span class="price">700 ₸</span>
+                    </div>
+                    <input type="hidden" id="deliveryTime" name="deliveryTime" required>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Сводка заказа -->
+    <div class="order-summary">
+        <h2>Ваш Заказ</h2>
+        <div class="total-price">
+            <p>Итоговая Сумма:</p>
+            <p class="summary-total" th:text="${totalPrice} + ' ₸'">0 ₸</p>
+        </div>
+        <form th:action="@{/checkout}" method="post" onsubmit="return validateAllFields()">
+            <button type="submit">Перейти к оплате через PayPal</button>
+        </form>
+    </div>
+</div>
+
+
+
+<p th:text="${errorMessage}"></p>
+<div th:replace="fragments/footer"></div>
+
+
+<script>
+    function validateAllFields() {
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const deliveryDate = document.getElementById('deliveryDate').value.trim();
+    const deliveryTime = document.getElementById('deliveryTime').value.trim();
+
+    if (!phone) {
+        alert("Пожалуйста, введите номер телефона.");
+        return false;
+    }
+    if (!address) {
+        alert("Пожалуйста, введите адрес доставки.");
+        return false;
+    }
+    if (!deliveryDate) {
+        alert("Пожалуйста, выберите дату доставки.");
+        return false;
+    }
+    if (!deliveryTime) {
+        alert("Пожалуйста, выберите время доставки.");
+        return false;
+    }
+    return true;
+}
+
+    // Функция для установки дат
+    function setDateBlocks() {
+        const today = new Date();
+        for (let i = 0; i < 4; i++) {
+            const date = new Date(today);
+            date.setDate(today.getDate() + i);
+
+            const dateStr = date.toLocaleDateString('ru-RU', {
+                day: 'numeric',
+                month: 'long'
+            });
+            document.getElementById(`date${i}`).textContent = dateStr;
+        }
+    }
+
+    // Функция для выбора даты
+    function selectDate(offset) {
+        const today = new Date();
+        today.setDate(today.getDate() + offset);
+        const selectedDate = today.toISOString().split('T')[0];
+
+        document.getElementById('deliveryDate').value = selectedDate;
+
+        // Убираем выделение со всех блоков и выделяем выбранный
+        document.querySelectorAll('.date-block').forEach(block => block.classList.remove('selected'));
+        document.getElementById(`date${offset}`).parentElement.classList.add('selected');
+    }
+
+    // Инициализация блоков с датами при загрузке страницы
+    setDateBlocks();
+
+    function selectTime(timeRange) {
+        document.getElementById('deliveryTime').value = timeRange;
+
+        // Убираем выделение со всех блоков и выделяем выбранный
+        document.querySelectorAll('.time-block').forEach(block => block.classList.remove('selected'));
+        Array.from(document.querySelectorAll('.time-block')).find(block => block.textContent.includes(timeRange)).classList.add('selected');
+    }
+
+function selectTime(timeRange) {
+    console.log("Selected time: " + timeRange);
+
+    // Обновляем скрытое поле #deliveryTime
+    const deliveryTimeInput = document.getElementById('deliveryTime');
+    if (deliveryTimeInput) {
+        deliveryTimeInput.value = timeRange; // Устанавливаем выбранное время
+        console.log("Hidden input updated: " + deliveryTimeInput.value); // Проверяем обновление
+    }
+
+    // Получаем все блоки времени
+    const timeBlocks = document.querySelectorAll('.time-block');
+
+    // Убираем выделение со всех блоков
+    timeBlocks.forEach(block => {
+        block.classList.remove('selected');
+        const timeInfo = block.querySelector('.time-info');
+        const timeRangeElem = block.querySelector('.time-range');
+        const priceElem = block.querySelector('.price');
+
+        // Убираем стиль с иконки
+        const icon = block.querySelector('.time-icon');
+        if (icon) {
+            icon.classList.remove('selected');
+        }
+
+        // Сбрасываем жирный шрифт
+        if (timeRangeElem) {
+            timeRangeElem.style.fontWeight = 'normal';
+        }
+    });
+
+    // Выделяем выбранный блок
+    const selectedBlock = Array.from(timeBlocks).find(block => block.querySelector('.time-range').textContent === timeRange);
+
+    if (selectedBlock) {
+        selectedBlock.classList.add('selected');
+        const icon = selectedBlock.querySelector('.time-icon');
+        if (icon) {
+            icon.classList.add('selected');
+        }
+        const timeRangeElem = selectedBlock.querySelector('.time-range');
+        if (timeRangeElem) {
+            timeRangeElem.style.fontWeight = 'bold'; // Устанавливаем жирный шрифт для выбранного элемента
+        }
+    }
+}
+
+
+</script>
+</body>
+</html>

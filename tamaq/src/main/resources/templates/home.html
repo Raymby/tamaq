@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Страница с корзиной</title>
+    <!-- Подключаем FontAwesome для иконки корзины и логотипа -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+    <style>
+        body {
+     background-color: #ffffff; /* Белый фон */
+     margin: 0; /* Убираем отступы */
+     font-family: 'Roboto', sans-serif; /* Пример шрифта */
+     color: #333; /* Цвет текста */
+ }
+         /* Стили для контента */
+         .content {
+             display: flex;
+             padding: 20px 100px;
+         }
+
+         /* Стили для левого блока с категориями */
+  .categories {
+     flex: 1;
+     max-width: 200px;
+     margin-right: 20px;
+ }
+
+ .categories ul {
+     list-style: none;
+     padding: 0;
+ }
+
+ .categories li {
+     background-color: #ffffff;
+     margin-bottom: 10px;
+     padding: 0; /* Убираем padding, так как будет у ссылки */
+     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+     position: relative; /* Устанавливаем для абсолютного позиционирования ссылки */
+ }
+
+ /* Делаем ссылку кликабельной по всей площади li */
+ .categories li a {
+     display: block;
+     width: 100%;
+     height: 100%;
+     padding: 15px; /* Добавляем padding на ссылку */
+     color: inherit; /* Наследуем цвет */
+     text-decoration: none; /* Убираем подчеркивание */
+ }
+
+ /* Эффект наведения для ссылки */
+ .categories li:hover {
+     background-color: #46a54b;
+     color: white;
+ }
+
+
+
+         /* Стили для большого блока с изображением продуктов */
+ .promo {
+     flex: 3;
+     margin-right: 20px;
+     background-color: #ffffff;
+     padding: 20px;
+     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+     position: relative;
+     text-align: center;
+     max-width: 100%;  /* Ограничиваем ширину */
+     overflow: hidden; /* Прячем все, что выходит за пределы */
+     height: 600px; /* Фиксированная высота блока */
+ }
+
+ .promo img {
+     width: 100%; /* Заставляем изображение растягиваться по ширине блока */
+     height: 100%; /* Высота изображения будет 100% от высоты родителя */
+     object-fit: cover; /* Изображение будет масштабироваться и обрезаться по необходимости */
+     display: block;
+     margin: 0 auto;
+     transition: opacity 0.3s ease-in-out; /* Плавный переход для opacity */
+ }
+
+ .promo .scroll-buttons {
+     display: flex;
+     justify-content: space-between;
+     position: absolute;
+     top: 50%;
+     left: 10px; /* Отступ слева */
+     right: 10px; /* Отступ справа */
+     transform: translateY(-50%);
+     z-index: 1; /* Устанавливаем уровень z-index выше, чтобы кнопки были над изображением */
+ }
+
+ .promo .scroll-buttons .btn {
+     background-color: #46a54b;
+     color: white;
+     border: none;
+     padding: 10px;
+     cursor: pointer;
+     opacity: 0.8;
+     border-radius: 5px; /* Закругление углов кнопок */
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+     transition: background-color 0.3s, box-shadow 0.3s;
+ }
+
+ .promo .scroll-buttons .btn:hover {
+     opacity: 1;
+     background-color: #387a3f; /* Более темный оттенок */
+     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+ }
+
+ .main-catalog {
+     max-width: 1540px; /* Максимальная ширина */
+     margin-top: 20px; /* Отступ сверху */
+     margin-left: 60px; /* Отступ слева */
+     padding: 20px; /* Внутренние отступы */
+     background-color: transparent; /* Убираем фон */
+     border: none; /* Убираем границу */
+     box-shadow: none; /* Убираем тень */
+ }
+
+ .catalog-header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-top: 20px;
+ }
+
+ .catalog-header h2 {
+     margin: 0;
+     margin-left: 20px; /* Отступ слева для заголовка */
+ }
+
+ /* Контейнер для кнопок управления */
+ .catalog-controls {
+     display: flex;
+     align-items: center;
+     gap: 5px; /* Уменьшено расстояние между кнопками */
+     margin-right: 20px;
+ }
+
+ /* Изменение размера кнопок */
+ .view-all-btn, .scroll-btn {
+     background-color: #46a54b; /* Зеленый цвет */
+     color: white;
+     border: none;
+     padding: 6px 12px; /* Уменьшенные внутренние отступы */
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+
+ .view-all-btn:hover, .scroll-btn:hover {
+     background-color: #3a8e3c; /* Более темный зеленый при наведении */
+ }
+
+ .scroll-btn {
+     font-size: 16px; /* Уменьшенный размер шрифта */
+     width: 30px; /* Уменьшенная ширина кнопки */
+     padding: 4px; /* Уменьшенные внутренние отступы */
+     margin-right: 0; /* Удаление отступа справа */
+ }
+
+
+
+        .main-catalog-items {
+     margin-top: 20px;
+     display: flex; /* Flexbox для расположения элементов в строку */
+     padding: 10px; /* Внутренние отступы */
+     scroll-behavior: smooth; /* Плавная прокрутка через JavaScript */
+     overflow-x: hidden; /* Убираем горизонтальную полоску прокрутки */
+ }
+
+ .main-catalog-item {
+    flex: none;
+    width: 200px; /* Ширина карточки */
+    margin-right: 20px;
+    text-align: center; /* Центрируем текст */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое */
+    justify-content: space-between;
+    background-color: #fff; /* Фон карточки */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.main-catalog-item .image-container {
+    width: 100%; /* Заполняет всю ширину карточки */
+    height: 150px; /* Фиксированная высота для всех контейнеров */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8; /* Светлый фон для контейнера */
+    border-radius: 8px; /* Закругленные углы */
+    overflow: hidden; /* Обрезаем все, что выходит за пределы */
+}
+
+.main-catalog-item img {
+    max-width: 100%; /* Изображение масштабируется по ширине */
+    max-height: 100%; /* Изображение масштабируется по высоте */
+    object-fit: contain; /* Сохраняем пропорции изображения */
+}
+
+.main-catalog-item h3 {
+    font-size: 16px;
+    color: black;
+    text-align: center; /* Центрирование текста заголовка */
+    margin: 5px 0; /* Уменьшаем отступы сверху и снизу */
+}
+
+.main-catalog-item p {
+    font-size: 14px; /* Размер шрифта описания */
+    color: #666;
+    text-align: center; /* Центрирование текста описания */
+    overflow: hidden; /* Убираем выходящий за пределы текст */
+    min-height: 36px; /* Минимальная высота для двух строк текста */
+    line-height: 1.4; /* Уменьшенный межстрочный интервал для компактности */
+    margin: 5px 0 10px 0; /* Уменьшенный верхний отступ и добавлен нижний */
+}
+
+
+ .main-catalog-item .price-strikethrough {
+     font-size: 14px; /* Размер шрифта чуть меньше для цены без скидки */
+     font-weight: 400; /* Обычный шрифт для цены без скидки */
+     color: #999; /* Серый цвет для цены без скидки */
+     text-decoration: line-through; /* Зачёркивание */
+     margin: 5px; /* Отступы сверху и снизу */
+ }
+
+
+         .main-catalog-item button {
+             margin-top: 20px;
+             background-color: #46a54b; /* Зеленый цвет */
+             color: white; /* Цвет текста */
+             border: none; /* Убираем рамку */
+             padding: 10px 15px; /* Внутренние отступы */
+             border-radius: 5px; /* Закругление углов */
+             cursor: pointer; /* Курсор-указатель */
+             transition: background-color 0.3s ease; /* Плавный переход цвета */
+         }
+
+         .main-catalog-item button:hover {
+             background-color: #3a8e3c; /* Более темный зеленый при наведении */
+         }
+
+ .main-catalog-item a {
+     text-decoration: none; /* Убирает подчеркивание */
+ }
+
+ .main-catalog-item a img {
+     border: none; /* Убирает рамку вокруг изображений, если она есть */
+ }
+
+
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/header"></div>
+
+
+<div class="content">
+    <div class="categories">
+        <ul>
+            <li th:each="category : ${categories}">
+                <a th:href="@{/categories/{id}(id=${category.id})}" th:text="${category.name}"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="promo">
+        <img id="promoImage" th:src="@{/img/promo1.jpg}" alt="Промо продукты">
+        <div class="scroll-buttons">
+            <button class="btn" onclick="scrollPromo('left')">←</button>
+            <button class="btn" onclick="scrollPromo('right')">→</button>
+        </div>
+    </div>
+</div>
+<!-- Каталог для фруктов -->
+<div class="main-catalog">
+    <div class="catalog-header">
+        <h2>Фрукты</h2>
+        <div class="catalog-controls">
+            <a href="/subcategories/11">
+                <button class="view-all-btn">Посмотреть все</button>
+            </a>
+            <button class="scroll-btn left" onclick="scrollCatalog('left', 'fruitCatalogItems')">&#9664;</button>
+            <button class="scroll-btn right" onclick="scrollCatalog('right', 'fruitCatalogItems')">&#9654;</button>
+        </div>
+    </div>
+
+    <div class="main-catalog-items" id="fruitCatalogItems">
+        <div class="main-catalog-item" th:each="product : ${appleProducts}">
+            <a th:href="@{/products/{id}(id=${product.id})}">
+                <!-- Контейнер для изображения -->
+                <div class="image-container">
+                    <img th:src="@{${product.imgUrl}}" th:alt="${product.name}">
+                </div>
+                <h3 th:text="${product.name}"></h3>
+            </a>
+            <p th:text="${product.description}"></p>
+            <!-- Включение фрагмента цены -->
+            <div th:replace="fragments/price"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Каталог для помидоров -->
+<div class="main-catalog">
+    <div class="catalog-header">
+        <h2>Овощи</h2>
+        <div class="catalog-controls">
+            <a href="/subcategories/15">
+                <button class="view-all-btn">Посмотреть все</button>
+            </a>
+            <button class="scroll-btn left" onclick="scrollCatalog('left', 'vegetableCatalogItems')">&#9664;</button>
+            <button class="scroll-btn right" onclick="scrollCatalog('right', 'vegetableCatalogItems')">&#9654;</button>
+        </div>
+    </div>
+
+    <div class="main-catalog-items" id="vegetableCatalogItems">
+        <div class="main-catalog-item" th:each="product : ${tomatoProducts}">
+            <a th:href="@{/products/{id}(id=${product.id})}">
+                <div class="image-container">
+                    <img th:src="@{${product.imgUrl}}" th:alt="${product.name}">
+                </div>
+                <h3 th:text="${product.name}"></h3>
+            </a>
+            <p th:text="${product.description}"></p>
+            <div th:replace="fragments/price"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Каталог для скидок -->
+<div class="main-catalog">
+    <div class="catalog-header">
+        <h2>Скидки</h2>
+        <div class="catalog-controls">
+            <a href="/discounts">
+                <button class="view-all-btn">Посмотреть все</button>
+            </a>
+            <button class="scroll-btn left" onclick="scrollCatalog('left', 'discountCatalogItems')">&#9664;</button>
+            <button class="scroll-btn right" onclick="scrollCatalog('right', 'discountCatalogItems')">&#9654;</button>
+        </div>
+    </div>
+
+    <div class="main-catalog-items" id="discountCatalogItems">
+        <div class="main-catalog-item" th:each="product : ${discountProducts}">
+            <a th:href="@{/products/{id}(id=${product.id})}">
+                <div class="image-container">
+                    <img th:src="@{${product.imgUrl}}" th:alt="${product.name}">
+                </div>
+                <h3 th:text="${product.name}"></h3>
+            </a>
+            <p th:text="${product.description}"></p>
+            <div th:replace="fragments/price"></div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="fragments/footer"></div>
+
+
+</body>
+</html>
+
+<script>
+    const images = [
+      "/img/promo2.jpg",
+      "/img/promo3.jpg",
+      "/img/promo4.jpg",
+      "/img/promo5.jpg",
+      "/img/promo6.jpeg",
+
+  ];
+
+  let currentIndex = 0;
+const promoImage = document.getElementById('promoImage');
+
+// Функция для смены изображения
+function changeImage() {
+    promoImage.style.opacity = 0; // Сначала делаем изображение прозрачным
+
+    setTimeout(() => {
+        // Изменяем источник изображения после завершения анимации
+        promoImage.src = images[currentIndex];
+
+        // Плавно восстанавливаем изображение
+        promoImage.style.opacity = 1;
+    }, 300); // Задержка соответствует времени анимации
+
+    // Обновляем индекс для следующего изображения
+    currentIndex = (currentIndex + 1) % images.length;
+}
+
+// Устанавливаем автоматическую смену изображений каждые 20 секунды
+setInterval(changeImage, 20000);
+
+// Функции для переключения изображений по кнопкам
+function scrollPromo(direction) {
+    if (direction === 'left') {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    } else if (direction === 'right') {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    }
+
+    promoImage.style.opacity = 0;
+
+    setTimeout(() => {
+        promoImage.src = images[currentIndex];
+        promoImage.style.opacity = 1;
+    }, 300);
+}
+    //Scrolling
+    function scrollCatalog(direction, containerId) {
+    const container = document.getElementById(containerId);
+
+    // Вычисляем ширину одного элемента
+    const itemWidth = container.querySelector('.main-catalog-item').offsetWidth;
+    const scrollAmount = itemWidth * 5; // Прокрутка на 5 элементов
+
+    if (direction === 'left') {
+        container.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    } else if (direction === 'right') {
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}
+
+
+</script>
+

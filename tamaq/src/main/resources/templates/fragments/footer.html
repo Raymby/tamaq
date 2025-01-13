@@ -1,0 +1,171 @@
+
+<style>
+    /* Общий стиль для футера */
+    .footer {
+        background-color: #333;
+        color: #f5f5f5;
+        padding: 40px 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /* Контейнер футера */
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    /* Логотип */
+    .footer-logo {
+        flex: 1 1 250px;
+    }
+
+    .footer-logo .footer-brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #46a54b;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .footer-logo .footer-brand i {
+        font-size: 28px;
+        margin-right: 10px;
+    }
+
+    .footer-logo .footer-description {
+        font-size: 14px;
+        color: #ccc;
+        margin: 0;
+    }
+
+    /* Блок навигации */
+    .footer-links,
+    .footer-info {
+        flex: 1 1 150px;
+    }
+
+    .footer-links h3,
+    .footer-info h3,
+    .footer-social h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #f5f5f5;
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul,
+    .footer-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links ul li,
+    .footer-info ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links ul li a,
+    .footer-info ul li a {
+        text-decoration: none;
+        color: #ccc;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links ul li a:hover,
+    .footer-info ul li a:hover {
+        color: #46a54b;
+    }
+
+    /* Социальные сети */
+    .footer-social {
+        flex: 1 1 150px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #ccc;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #46a54b;
+        transform: scale(1.1);
+    }
+
+    /* Нижняя часть футера */
+    .footer-bottom {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        border-top: 1px solid #555;
+        padding-top: 15px;
+    }
+</style>
+
+<div th:fragment="footer" xmlns:th="http://www.w3.org/1999/xhtml">
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Логотип и описание -->
+            <div class="footer-logo">
+                <a th:href="@{/home}" class="footer-brand">
+                    <i class="fas fa-seedling"></i>
+                    <span>Tagam</span>
+                </a>
+                <p class="footer-description">Tagam – это ваш идеальный выбор свежих продуктов. Мы заботимся о вашем питании.</p>
+            </div>
+
+            <!-- Навигационные ссылки -->
+            <div class="footer-links">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a th:href="@{/home}">Главная</a></li>
+                    <li><a th:href="@{/categories}">Категории</a></li>
+                    <li><a th:href="@{/profile}">Профиль</a></li>
+                    <li><a th:href="@{/contact}">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Информация о компании -->
+            <div class="footer-info">
+                <h3>Информация</h3>
+                <ul>
+                    <li><a th:href="@{/privacy}">Политика конфиденциальности</a></li>
+                    <li><a th:href="@{/terms}">Условия использования</a></li>
+                    <li><a th:href="@{/about}">О нас</a></li>
+                </ul>
+            </div>
+
+            <!-- Социальные сети -->
+            <div class="footer-social">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Нижняя часть футера -->
+        <div class="footer-bottom">
+            <p>© 2024 Tagam. Все права защищены.</p>
+        </div>
+    </footer>
+</div>

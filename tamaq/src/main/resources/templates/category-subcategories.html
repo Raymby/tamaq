@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Подкатегории в категории</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+    <style>
+        /* Общие стили для body */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+
+        /* Стили для контента */
+        .content {
+            display: flex;
+            padding: 20px 100px;
+        }
+
+        /* Стили для левого блока с категориями */
+        .categories {
+            flex: 1;
+            max-width: 200px;
+            margin-right: 20px;
+        }
+
+        .categories ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .categories li {
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            padding: 0; /* Убираем padding, так как будет у ссылки */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative; /* Устанавливаем для абсолютного позиционирования ссылки */
+        }
+
+        /* Делаем ссылку кликабельной по всей площади li */
+        .categories li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 15px; /* Добавляем padding на ссылку */
+            color: inherit; /* Наследуем цвет */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        /* Эффект наведения для ссылки */
+        .categories li:hover {
+            background-color: #46a54b;
+            color: white;
+        }
+
+ .subcategories {
+    margin-top: 20px;
+    margin-left: 120px; /* Отступ справа для приближения к правому краю */
+}
+
+.subcategories ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+    justify-content: flex-end; /* Выровнять элементы по правому краю */
+}
+
+.subcategories li {
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 180px;
+    text-align: center;
+}
+
+.subcategories li:hover {
+    transform: scale(1.02);
+}
+
+.subcategory-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.subcategory-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subcategories img {
+    width: 120px; /* Увеличенная ширина изображения */
+    height: 120px; /* Увеличенная высота изображения */
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.subcategory-name {
+    margin-top: 8px;
+    font-size: 1.2em;
+    font-weight: normal; /* Убираем жирность текста */
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/header"></div>
+
+<div class="content">
+    <div class="categories">
+        <ul>
+            <li th:each="category : ${categories}">
+                <a th:href="@{/categories/{id}(id=${category.id})}" th:text="${category.name}"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="subcategories">
+        <h1 th:text="${category.name}">Название категории</h1>
+        <ul>
+            <li th:each="subCategory : ${subCategories}">
+                <a th:href="@{/subcategories/{id}(id=${subCategory.id})}" class="subcategory-link">
+                    <div class="subcategory-content">
+                        <img th:src="@{'/' + ${subCategory.imgUrl}}" alt="Изображение подкатегории" />
+
+
+                        <span class="subcategory-name" th:text="${subCategory.name}"></span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукты в подкатегории</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+</head>
+<style>
+    /* Общие стили для body */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+/* Основные стили для контейнера корзины */
+.cart-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Стили для списка товаров в корзине */
+.cart-items {
+    width: 65%;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 20px;
+}
+
+/* Стили для каждого элемента корзины */
+.cart-item {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Стили для изображения продукта */
+.product-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 35px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Стили для информации о продукте */
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стили для заголовка продукта */
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Название продукта */
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Кнопка удаления товара */
+.remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #d9534f;
+}
+
+/* Контролы количества товара */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+/* Стиль для количества товара */
+.quantity {
+    font-weight: bold;
+}
+
+/* Цена товара */
+.product-price {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Стили для сводки заказа */
+.order-summary {
+    height: 200px; /* фиксированная высота */
+    margin-top: 80px;
+    width: 600px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: left;
+    margin-right: 20px;
+}
+
+/* Заголовок сводки заказа */
+.order-summary h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Стили для общей суммы */
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Общая итоговая сумма */
+.summary-total {
+    font-weight: bold;
+    color: #5cb85c;
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+/* Кнопка для оформления заказа */
+.checkout-button {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #5cb85c;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto; /* Автоматический отступ по центру */
+}
+
+.checkout-button:hover {
+    background-color: #4cae4c;
+}
+
+.empty-cart-message {
+    width: 400px; /* Фиксированная ширина */
+    margin-left:400px;
+    margin-top:100px;
+    display: flex; /* Используйте flex для центрирования содержимого */
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    height: 300px; /* Задайте высоту, если нужно */
+    font-family: 'Roboto', sans-serif;
+    text-align: center; /* Центрирование текста */
+}
+
+/* Стили для текста "Ваша корзина пуста" */
+.empty-cart-message p {
+    font-size: 20px;
+    color: #555;
+    font-weight: bold; /* Жирный текст */
+    margin-bottom: 20px;
+}
+
+/* Кнопка "Перейти к покупкам" */
+.empty-cart-message .go-shopping {
+    display: inline-block;
+    padding: 12px 0;
+    width: 220px; /* Ширина кнопки */
+    font-size: 18px;
+    font-weight: 400; /* Нежирный текст */
+    color: #fff;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    text-align: center; /* Текст по центру внутри кнопки */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.empty-cart-message .go-shopping:hover {
+    background-color: #4cae4c;
+}
+
+
+
+
+</style>
+<body>
+<div th:replace="fragments/header"></div>
+
+
+<div class="cart-container">
+    <div class="empty-cart-message" th:if="${#lists.isEmpty(cartItems)}">
+        <p>Ваша корзина пуста</p>
+        <a th:href="@{/categories/{id}(id=9)}" class="button go-shopping">Перейти к покупкам</a>
+    </div>
+
+    <ul class="cart-items">
+        <li class="cart-item" th:each="item : ${cartItems}" th:data-url="@{/cart/update-quantity(id=${item.id})}" data-item-id="${item.id}">
+            <img th:src="${item.product.imgUrl}" alt="Изображение продукта" class="product-image" />
+            <div class="product-info">
+                <div class="product-header">
+                    <p class="product-name" th:text="${item.product.name}">Имя продукта</p>
+                    <form class="remove-form" th:action="@{/remove-from-cart}" method="post">
+                        <input type="hidden" th:name="'id'" th:value="${item.id}" />
+                        <button type="submit" class="remove-button">🗑️</button>
+                    </form>
+                </div>
+                <p class="product-description" th:text="${item.product.description}">Описание продукта</p>
+                <div class="quantity-controls">
+                    <button type="button" class="decrease">-</button>
+                    <span class="quantity" th:text="${item.quantity}">0</span>
+                    <button type="button" class="increase">+</button>
+                </div>
+                <p class="product-price" th:text="${item.product.price} + ' ₸'">Цена</p>
+            </div>
+        </li>
+    </ul>
+
+    <div class="order-summary">
+        <h2>Ваш Заказ</h2>
+        <div class="total-price">
+            <p>Итоговая Сумма:</p>
+            <p class="summary-total" th:text="${totalPrice} + ' ₸'">0 ₸</p>
+        </div>
+        <a href="/checkout" class="checkout-button">Перейти к оформлению</a>
+    </div>
+</div>
+
+<div th:replace="fragments/footer"></div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".decrease, .increase").forEach(button => {
+        button.addEventListener("click", function () {
+            const isIncrease = this.classList.contains("increase");
+            const cartItem = this.closest(".cart-item");
+            const baseUrl = cartItem.getAttribute("data-url");
+            const url = `${baseUrl}&increase=${isIncrease}`;
+
+            fetch(url, {
+                method: "POST",
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const quantityElement = cartItem.querySelector(".quantity");
+                    quantityElement.textContent = data.newQuantity;
+
+                    const priceElement = cartItem.querySelector(".product-price");
+                    priceElement.textContent = `${data.newTotalPrice.toFixed(2)} ₽`; // Обновляем цену товара
+
+                    if (data.newQuantity === 0) {
+                        cartItem.remove(); // Удаляем товар, если количество стало 0
+                    }
+
+                    // Пересчитываем итоговую сумму, суммируя все текущие товары в корзине
+                    const totalPriceElement = document.querySelector(".summary-total");
+                    const allPrices = document.querySelectorAll(".product-price");
+                    let newTotalPrice = 0;
+                    allPrices.forEach(price => {
+                        newTotalPrice += parseFloat(price.textContent);
+                    });
+                    totalPriceElement.textContent = `${newTotalPrice.toFixed(2)} ₽`; // Обновляем общую сумму
+                } else {
+                    alert("Ошибка обновления количества");
+                }
+            })
+            .catch(error => console.error("Ошибка:", error));
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>

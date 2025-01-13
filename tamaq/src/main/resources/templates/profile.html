@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль пользователя</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .tab {
+            padding: 10px 0;
+            flex: 1;
+            text-align: center;
+            font-weight: 500;
+            color: #9ca3af;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            color: #53c959;
+            border-bottom: 3px solid #53c959;
+        }
+
+        .content-block {
+            display: none;
+        }
+
+        .content-block.active {
+            display: block;
+        }
+
+        .info-block {
+            margin-bottom: 16px;
+        }
+
+        .info-block label {
+            display: block;
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+
+        .info-block p {
+            font-size: 14px;
+            color: #374151;
+            margin: 0;
+            background: #f9fafb;
+            padding: 6px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            min-height: 28px;
+            display: flex;
+            align-items: center;
+        }
+
+        .orders-section table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: separate;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .orders-section table th,
+        .orders-section table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .orders-section table th {
+            background-color: #f3f4f6;
+            color: #374151;
+            font-weight: bold;
+        }
+
+        .orders-section table td {
+            background-color: #ffffff;
+            color: #374151;
+        }
+
+        .orders-section table td a.details {
+            background-color: #53c959;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .orders-section table td a.details:hover {
+            background-color: #46a54b;
+        }
+
+        .orders-section .empty-message {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 20px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .edit-btn {
+            background-color: #53c959;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .edit-btn:hover {
+            background-color: #46a54b;
+        }
+
+        .logout-btn {
+            background-color: #d1d5db;
+            color: #374151;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/header"></div>
+
+<div class="container">
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('profile')">Профиль</div>
+        <div class="tab" onclick="showTab('orders-section')">История заказов</div>
+    </div>
+
+    <!-- Профиль -->
+    <div id="profile" class="content-block active">
+        <div class="info-block">
+            <label>Имя пользователя:</label>
+            <p th:text="${user.username}">Имя пользователя</p>
+        </div>
+
+        <div class="info-block">
+            <label>Мобильный телефон:</label>
+            <p th:text="${user.contactNumber ?: 'Не указан'}">Не указан</p>
+        </div>
+
+        <div class="info-block">
+            <label>Электронная почта:</label>
+            <p th:text="${user.email ?: 'Не указана'}">Не указана</p>
+        </div>
+
+        <div class="buttons">
+            <a th:href="@{/profile/edit}" class="edit-btn">Изменить</a>
+            <a th:href="@{/logout}" class="logout-btn">Выйти из аккаунта</a>
+        </div>
+    </div>
+
+    <!-- История заказов -->
+    <div id="orders-section" class="content-block orders-section">
+        <table>
+            <thead>
+            <tr>
+                <th>Номер заказа</th>
+                <th>Дата</th>
+                <th>Сумма</th>
+                <th>Статус</th>
+                <th>Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(orders)}" class="empty-message">
+                <td colspan="5">Заказы отсутствуют.</td>
+            </tr>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.id}">1</td>
+                <td th:text="${order.deliveryDate + ' | ' + order.deliveryTime}">Неизвестно</td>
+                <td th:text="${order.totalAmount} + ' KZT'"></td>
+                <td th:text="${order.status}"></td>
+                <td>
+                    <a th:href="@{/order/details/{id}(id=${order.id})}" class="details">Посмотреть</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function showTab(tab) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.content-block').forEach(c => c.classList.remove('active'));
+
+        document.getElementById(tab).classList.add('active');
+        document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active');
+    }
+</script>
+
+<div th:replace="fragments/footer"></div>
+
+</body>
+</html>

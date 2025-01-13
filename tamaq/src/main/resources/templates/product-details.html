@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукты</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .product-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            flex: 1;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .product-details {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-details h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product-details .description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .product-details .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #53c959;
+            margin-bottom: 10px;
+        }
+
+        .price-original {
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        .discount {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .product-details .additional-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+          .add-to-cart {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .quantity-controls {
+        display: flex;
+        align-items: center;
+        background-color: #53c959;
+        color: white;
+        border-radius: 12px;
+        padding: 5px 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .quantity-controls .quantity-value {
+        margin: 0 10px;
+    }
+
+    .quantity-button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .add-button {
+        background-color: #53c959;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-button:hover {
+        background-color: #46a54b;
+    }
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/header"></div>
+
+<div class="product-container">
+    <div class="product-image">
+        <img th:src="@{'/' + ${product.imgUrl}}" alt="Изображение продукта">
+    </div>
+    <div class="product-details">
+        <h1 th:text="${product.name}">Название продукта</h1>
+        <div class="description" th:text="${product.description}">Описание продукта</div>
+        <div>
+            <!-- Отображение цены с учетом скидки -->
+            <span class="price" th:text="${product.hasDiscount ? product.price - (product.price * product.discount) : product.price}">Цена</span>
+            <span class="price-original" th:if="${product.hasDiscount}" th:text="${product.price}">Оригинальная цена</span>
+            <span class="discount" th:if="${product.hasDiscount}" th:text="'-' + ${discountPercentage} + '%'">Скидка</span>
+        </div>
+        <div class="additional-info">
+            <p><strong>Бренд:</strong> <span th:text="${product.brand}">Название бренда</span></p>
+            <p><strong>Страна:</strong> <span th:text="${product.country}">Страна</span></p>
+            <p th:if="${product.fullDescription}"><strong>Описание:</strong> <span th:text="${product.fullDescription}">Полное описание продукта</span></p>
+        </div>
+        <form th:action="@{/cart/add-direct}" method="post" id="add-to-cart-form">
+            <!-- Скрытое поле для передачи productId -->
+            <input type="hidden" name="productId" th:value="${product.id}" />
+
+            <div class="add-to-cart">
+                <div class="quantity-controls">
+                    <button type="button" class="quantity-button decrement" onclick="decreaseQuantity()">-</button>
+                    <span class="quantity-value">1</span>
+                    <button type="button" class="quantity-button increment" onclick="increaseQuantity()">+</button>
+                </div>
+                <!-- Скрытое поле для передачи количества -->
+                <input type="hidden" name="quantity" id="quantity-input" value="1" />
+                <button type="submit" class="add-button">Добавить в корзину</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div th:replace="fragments/footer"></div>
+
+<script>
+    let quantity = 1;
+
+    function updateQuantityValue() {
+        document.querySelector('.quantity-value').textContent = quantity;
+        document.getElementById('quantity-input').value = quantity; // Обновляем скрытое поле
+    }
+
+    function increaseQuantity() {
+        quantity++;
+        updateQuantityValue();
+    }
+
+    function decreaseQuantity() {
+        if (quantity > 1) {
+            quantity--;
+            updateQuantityValue();
+        }
+    }
+</script>
+
+</body>
+</html>

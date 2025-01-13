@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>История заказов</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn.details {
+            background-color: #4a90e2;
+            color: #fff;
+        }
+
+        .btn.details:hover {
+            background-color: #357ab8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>История заказов</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Номер заказа</th>
+            <th>Дата заказа</th>
+            <th>Сумма</th>
+            <th>Статус</th>
+            <th>Детали</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}">1</td>
+            <td th:text="${order.deliveryDate + ' | ' + order.deliveryTime}">16.11.2024 11:10</td>
+            <td th:text="${order.totalAmount} + ' USD'"></td>
+            <td th:text="${order.status}"></td>
+            <td>
+                <a th:href="@{/order/details/{id}(id=${order.id})}" class="btn details">Посмотреть</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/profile}" class="btn">Вернуться в профиль</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать профиль</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-weight: 500;
+            font-size: 16px;
+            color: #53c959;
+            margin: 0 0 20px 0;
+            border-bottom: 3px solid #53c959;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #374151;
+            background-color: #f9fafb;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #53c959;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .save-btn {
+            background-color: #53c959;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .save-btn:hover {
+            background-color: #46a54b;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/header"></div>
+
+<div class="container">
+    <h1>Профиль</h1>
+
+    <form th:action="@{/profile/update}" th:object="${user}" method="post">
+        <div class="form-group">
+            <label for="contactNumber">Мобильный телефон:</label>
+            <input type="text" id="contactNumber" th:field="*{contactNumber}" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" th:field="*{email}" required />
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="save-btn">Сохранить</button>
+        </div>
+    </form>
+</div>
+
+<div th:replace="fragments/footer"></div>
+
+</body>
+</html>
